@@ -1,4 +1,4 @@
-export const teamMembers = [
+export const teamMemberData = [
   {
     id: 1,
     name: "Terry Pratchett",
