@@ -4,6 +4,12 @@ export const teamMemberData = [
     name: "Terry Pratchett",
     email: "turtles@allthewaydown.dev",
     role: "Sage"
+  },
+  {
+    id: 2,
+    name: "Luke Skywalker",
+    email: "imdaliteaight@butdad.no",
+    role: "Jedi"
   }
 ];
 
