@@ -41,6 +41,15 @@ const Form = props => {
           })}
         </select>
 
+        {/* 
+        Issue: Using enter on <select> throws an error: Assertion failed: Input argument is not an HTMLInputElement in onloadwff.js
+        A little research brought this: Basically workaround is to just assume customers don't have LastPass and if they do, just explain its a LastPass issue...
+        from https://forums.lastpass.com/viewtopic.php?f=12&t=326565
+        Disabling LastPass removes the error, but hitting enter then does nothing - instead of rendering a new Team Member card
+        Enter does work on Name and Email
+        Using Firefox at the moment. Have not tried in Chrome
+        */}
+
         <button type="submit">Become</button>
       </form>
     </div>
