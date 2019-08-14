@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TeamMembers from "./Components/TeamMembers";
+import Form from "./Components/Form";
 
 import { teamMemberData } from "./data";
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <Form />
       <TeamMembers teamMembers={teamMembers} />
     </div>
   );
