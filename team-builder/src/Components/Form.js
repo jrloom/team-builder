@@ -19,7 +19,7 @@ const Form = props => {
       email: ""
     });
   };
-  // console.log(teamMemberRoles);
+
   return (
     <div>
       <h1>Come Join Us</h1>
@@ -31,7 +31,6 @@ const Form = props => {
         <input type="email" name="email" value={teamMember.email} onChange={handleChange} />
 
         <label htmlFor="role">Role:</label>
-        {/* <input type="text" name="role" value={teamMember.role} onChange={handleChange} /> */}
         <select name="role" onChange={handleChange}>
           {teamMemberRoles.map(teamMemberRole => {
             return (
