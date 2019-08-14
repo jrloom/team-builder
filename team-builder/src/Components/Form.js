@@ -1,30 +1,25 @@
 import React, { useState } from "react";
 
+import { teamMemberRoles } from "../data";
+
 const Form = props => {
   const [teamMember, setTeamMember] = useState({
     name: "",
-    email: "",
-    role: []
+    email: ""
   });
 
-  const handleChange = event => {
-    setTeamMember({ ...teamMember, [event.target.name]: event.target.value });
-  };
+  const handleChange = event => setTeamMember({ ...teamMember, [event.target.name]: event.target.value });
 
   const handleSubmit = event => {
     event.preventDefault();
-    const newTeamMember = {
-      ...teamMember,
-      id: Date.now()
-    };
+    const newTeamMember = { ...teamMember, id: Date.now() };
     props.addNewTeamMember(newTeamMember);
     setTeamMember({
       name: "",
-      email: "",
-      role: []
+      email: ""
     });
   };
-
+  // console.log(teamMemberRoles);
   return (
     <div>
       <h1>Come Join Us</h1>
@@ -36,7 +31,16 @@ const Form = props => {
         <input type="email" name="email" value={teamMember.email} onChange={handleChange} />
 
         <label htmlFor="role">Role:</label>
-        <input type="text" name="role" value={teamMember.role} onChange={handleChange} />
+        {/* <input type="text" name="role" value={teamMember.role} onChange={handleChange} /> */}
+        <select name="role" onChange={handleChange}>
+          {teamMemberRoles.map(teamMemberRole => {
+            return (
+              <option key={teamMemberRole.id} value={teamMemberRole.role}>
+                {teamMemberRole.role}
+              </option>
+            );
+          })}
+        </select>
 
         <button type="submit">Become</button>
       </form>
