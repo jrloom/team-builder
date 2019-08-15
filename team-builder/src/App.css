@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.card:not(:last-child) {
+  margin-right: 10px;
+}
